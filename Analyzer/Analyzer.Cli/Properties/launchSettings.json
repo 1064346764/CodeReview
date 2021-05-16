@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Analyzer.Cli": {
+      "commandName": "Project",
+      "commandLineArgs": ""
+    }
+  }
+}
