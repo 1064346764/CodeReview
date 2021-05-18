@@ -14,13 +14,22 @@ namespace Analyzer.Rule
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class AsyncMethodEndWithAsync1001Rule : DiagnosticAnalyzer
     {
+        //唯一诊断标识符(此id与resources文件中的前缀需保持一致)
         public const string DiagnosticId = "Test1001";
-        public static readonly LocalizableString Title = new LocalizableResourceString(nameof(Resources._1001Title), Resources.ResourceManager, typeof(Resources));
-        public static readonly LocalizableString MessageFormat = new LocalizableResourceString(nameof(Resources._1001MessageFormat), Resources.ResourceManager, typeof(Resources));
-        public static readonly LocalizableString Description = new LocalizableResourceString(nameof(Resources._1001Description), Resources.ResourceManager, typeof(Resources));
+        //标题
+        public static readonly LocalizableString Title = 
+            new LocalizableResourceString(nameof(Resources.Test1001Title), Resources.ResourceManager, typeof(Resources));
+        //提示信息
+        public static readonly LocalizableString MessageFormat = 
+            new LocalizableResourceString(nameof(Resources.Test1001MessageFormat), Resources.ResourceManager, typeof(Resources));
+        //描述信息
+        public static readonly LocalizableString Description = 
+            new LocalizableResourceString(nameof(Resources.Test1001Description), Resources.ResourceManager, typeof(Resources));
+        //类别
         public const string Category = "Test";
 
-        public static readonly DiagnosticDescriptor Rule = new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, Category, DiagnosticSeverity.Warning, isEnabledByDefault: true, description: Description);
+        public static readonly DiagnosticDescriptor Rule = 
+            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, Category, DiagnosticSeverity.Error,  true, Description);
 
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get { return ImmutableArray.Create(Rule); } }
 
@@ -45,13 +54,12 @@ namespace Analyzer.Rule
         }
 
         /// <summary>
-        /// 句柄接口声明
+        /// 规则描述
         /// </summary>
         private static void HandleMethodDeclaration(SyntaxNodeAnalysisContext context)
         {
             var methodDeclarationSyntax = (MethodDeclarationSyntax)context.Node;
             var hasAsyncModifiers = methodDeclarationSyntax.Modifiers.Any(SyntaxKind.AsyncKeyword);
-            Console.WriteLine($"{methodDeclarationSyntax.Identifier.ValueText}");
             var asyncMethodNotEndWithAsync = 
                 !methodDeclarationSyntax.Identifier.ValueText.EndsWith("Async", StringComparison.Ordinal);
             if (hasAsyncModifiers && asyncMethodNotEndWithAsync)

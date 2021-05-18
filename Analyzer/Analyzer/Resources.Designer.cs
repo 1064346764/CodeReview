@@ -63,27 +63,27 @@ namespace Analyzer {
         /// <summary>
         ///   查找类似 异步方法必须以Async结尾 的本地化字符串。
         /// </summary>
-        internal static string _1001Description {
+        internal static string Test1001Description {
             get {
-                return ResourceManager.GetString("1001Description", resourceCulture);
+                return ResourceManager.GetString("Test1001Description", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查找类似 异步方法必须以Async结尾 的本地化字符串。
         /// </summary>
-        internal static string _1001MessageFormat {
+        internal static string Test1001MessageFormat {
             get {
-                return ResourceManager.GetString("1001MessageFormat", resourceCulture);
+                return ResourceManager.GetString("Test1001MessageFormat", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查找类似 异步方法必须以Async结尾 的本地化字符串。
         /// </summary>
-        internal static string _1001Title {
+        internal static string Test1001Title {
             get {
-                return ResourceManager.GetString("1001Title", resourceCulture);
+                return ResourceManager.GetString("Test1001Title", resourceCulture);
             }
         }
     }

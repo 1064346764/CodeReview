@@ -11,5 +11,11 @@ namespace Analyzer.Test.Data.Test1001
         {
             await Task.CompletedTask;
         }
+
+
+        public async Task TestAsyncMethodAsync()
+        {
+            await Task.CompletedTask;
+        }
     }
 }
