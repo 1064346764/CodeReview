@@ -15,7 +15,7 @@
 
 同时构建插件和CLI工具
 
-- 运行.\WiqunAnalyzer.Vsix 下的publish.ps1脚本
+- 运行.\Analyzer.Vsix 下的publish.ps1脚本
 - 在\\\192.168.1.18\public\visuals
 
 
@@ -29,6 +29,6 @@
 
 # 使用CLI
 
-- WiqunAnalyzer.CLI.exe sln文件目录
-- WiqunAnlayzer.CLI 项目目录下运行 run.ps1 sln文件目录
+- Analyzer.CLI.exe sln文件目录
+- Anlayzer.CLI 项目目录下运行 run.ps1 sln文件目录
 - 注: run.ps1 得在pusblish.ps1之后执行
