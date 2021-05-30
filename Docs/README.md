@@ -7,11 +7,8 @@
 
 ### 插件输出准备工作
 
-插件输出目录下若无PrivateGalleryCreator.exe 
 下载[GitHub - madskristensen/PrivateGalleryCreator: Create private extension galleries for Visual Studio](https://github.com/madskristensen/PrivateGalleryCreator/tree/master)
 解压至输出目录
-
-重新生成相关生成器文件
 
 ### 打包插件
 
